@@ -299,6 +299,7 @@ $baseurl: '{{ site.baseurl }}/images';
 		padding: 0 1em;
 		text-decoration: none;
 		width: 100%;
+		resize: none;
 
 		&:invalid {
 			box-shadow: none;
@@ -1889,6 +1890,10 @@ $baseurl: '{{ site.baseurl }}/images';
 		#footer {
 			background-color: darken(transparentize(_palette(bg), 0.1), 8);
 		}
+		
+		#thanker {
+			background-color: transparentize(_palette(bg), 1.0);
+		}
 	}
 
 	body.is-mobile {
@@ -1897,7 +1902,7 @@ $baseurl: '{{ site.baseurl }}/images';
 				background: none;
 			}
 
-			#banner,
+			#banner,#thankerbanner,
 			.wrapper.style4 {
 				@include vendor('background-image', ('linear-gradient(top, rgba(0,0,0,0.5), rgba(0,0,0,0.5))', 'url("#{$baseurl}/banner.jpg")'));
 				background-position: center center;
@@ -1908,5 +1913,154 @@ $baseurl: '{{ site.baseurl }}/images';
 			#footer {
 				background-color: darken(_palette(bg), 8);
 			}
+			
+			#thanker {
+				background-color: transparentize(_palette(bg), 1.0);
+			}
 		}
 	}
+	
+/* Thanker */
+
+		#thanker {
+			@include padding(6em, 0);
+			background-color: darken(_palette(bg), 8);
+			text-align: center;
+
+			.icons {
+				font-size: 1.25em;
+
+				a {
+
+					&:hover {
+						color: _palette(fg);
+						font-size: 1.75em;
+					}
+				}
+			}
+
+			.copyright {
+				font-size: 0.8em;
+				letter-spacing: _size(letter-spacing-alt);
+				list-style: none;
+				padding: 0;
+				text-transform: uppercase;
+
+				li {
+					border-left: solid 1px _palette(fg-light);
+					display: inline-block;
+					line-height: 1em;
+					margin-left: 1em;
+					padding-left: 1em;
+
+					&:first-child {
+						border-left: 0;
+						margin-left: 0;
+						padding-left: 0;
+					}
+
+					a {
+						color: inherit;
+
+						&:hover {
+							color: _palette(fg);
+						}
+					}
+
+					@include breakpoint(xsmall) {
+						border: 0;
+						display: block;
+						line-height: 1.65em;
+						margin: 0;
+						padding: 0.5em 0;
+					}
+				}
+			}
+
+			@include breakpoint(medium) {
+				@include padding(4em, 3em);
+			}
+
+			@include breakpoint(small) {
+				@include padding(3em, 2em);
+			}
+		}
+		
+/* ThankerBanner */
+		
+#thankerbanner {
+			@include vendor('display', 'flex');
+			@include vendor('flex-direction', 'column');
+			@include vendor('justify-content', 'center');
+			cursor: default;
+			height: 100vh;
+			min-height: 35em;
+			overflow: hidden;
+			position: relative;
+			text-align: center;
+
+			h2 {
+				@include vendor('transform', 'scale(1)');
+				@include vendor('transition', ('transform 0.5s ease', 'opacity 0.5s ease'));
+				display: inline-block;
+				font-size: 1.75em;
+				opacity: 1;
+				padding: 0.35em 1em;
+				position: relative;
+				z-index: 1;
+			}
+			
+			&:after {
+				@include vendor('pointer-events', 'none');
+				@include vendor('transition', 'opacity #{_duration(fadein)} ease-in-out');
+				@include vendor('transition-delay', '1.25s');
+				content: '';
+				background: _palette(bg);
+				display: block;
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				left: 0;
+				top: 0;
+				opacity: 0;
+			}
+
+			@include breakpoint(small) {
+				@include padding(7em, 3em);
+				height: auto;
+				min-height: 0;
+
+				h2 {
+					font-size: 1.25em;
+				}
+
+				br {
+					display: none;
+				}
+
+				.more {
+					display: none;
+				}
+			}
+		}
+		body.is-loading {
+			#thankerbanner {
+				h2 {
+					@include vendor('transform', 'scale(0.95)');
+					opacity: 0;
+
+					&:before, &:after {
+						width: 0;
+					}
+				}
+
+				.more {
+					@include vendor('transform', 'translateY(8.5em)');
+					opacity: 0;
+				}
+
+				&:after {
+					opacity: 1;
+				}
+			}
+		}

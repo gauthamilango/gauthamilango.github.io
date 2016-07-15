@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--
+  Original Design: Spectral by HTML5 UP
+    html5up.net | @n33co
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+  Jekyll build mod
+-->
+<html>
+
+  {% include head.html %}
+
+  <body class="landing">
+
+    <!-- Page Wrapper -->
+    <div id="page-wrapper">
+
+      {% include header2.html %}
+
+	<section id="thankerbanner">
+		<div class="inner">
+			<h2>{{ page.title }}</h2>
+			<p>We will get back to you as soon as possible</p>
+		</div>
+		<div id="thanker">
+	    <ul class="icons">
+	      {% for socloc in site.social %}
+	      {% if socloc[1] %}
+	      {% if socloc[0] == 'email' %}
+	      <li><a target="_blank" href="{{ socloc[1] }}" class="icon fa-envelope-o"
+	             ><span class="label">E-mail</span></a></li>
+	      {% else %}
+	      <li><a target="_blank" href="{{ socloc[1] }}" class="icon fa-{{ socloc[0] }}"
+	             ><span class="label">{{ socloc[0] }}</span></a></li>
+	      {% endif %}
+	      {% endif %}
+	      {% endfor %}
+	    </ul>
+	    <ul class="copyright">
+	      <li>&copy; {% assign thisyear = site.time | date: "%Y" %}
+	      {% if site.first_published %}
+	        {% capture diff %}{{ site.first_published | minus:thisyear }}{% endcapture %}
+	        {% if diff contains '-' %}{{ site.first_published }},{% endif %}
+	      {% endif %}
+	      {{ thisyear }}
+	      {% if site.owner %}{{ site.owner }}{% else %}{{ site.title }}{% endif %}</li>
+	    </ul>
+	</div>
+	</section>
+
+      {% include scripts.html %}
+
+    </div>
+
+  </body>
+
+</html>
