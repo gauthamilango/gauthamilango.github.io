@@ -489,6 +489,28 @@ $baseurl: '{{ site.baseurl }}/images';
 				font-size: 1em;
 			}
 		}
+		
+		&.xyz {
+			@include vendor('transform', 'rotate(-45deg)');
+			border-radius: 3px;
+			border: solid 2px _palette(border);
+			display: inline-block;
+			font-size: 1.35em;
+			height: calc(3em + 2px);
+			line-height: 3em;
+			text-align: center;
+			width: calc(3em + 2px);
+
+			&:before {
+				@include vendor('transform', 'rotate(45deg)');
+				display: inline-block;
+				font-size: 1.5em;
+			}
+
+			@include breakpoint(small) {
+				font-size: 1em;
+			}
+		}
 
 		&.style1 {
 			color: _palette(accent2, bg);
@@ -882,7 +904,63 @@ $baseurl: '{{ site.baseurl }}/images';
 			line-height: 3.75em;
 		}
 	}
+	
+/* Progress Bar */
+	
+	//
+	// Progress bars
+	// --------------------------------------------------
 
+
+	// Bar animations
+	// -------------------------
+
+
+	// Bar itself
+	// -------------------------
+
+	// Outer container
+	.progress {
+	  overflow: hidden;
+	  height: $line-height-computed + 20;
+	  margin-bottom: $line-height-computed;
+	  background-color: $color_fuscous_gray_approx;
+	  border-radius: $progress-border-radius;
+	  padding: 10px;
+	}
+
+	// Bar of progress
+	.progress-bar {
+	  float: left;
+	  width: 0%;
+	  height: 100%;
+	  font-size: $font-size-small;
+	  line-height: $line-height-computed;
+	  color: $color_chateau_green_approx;
+	  text-align: center;
+	  background-color: $color_chateau_green_approx;
+	  border-radius: $progress-border-radius;
+	}
+
+	// Variations
+	// -------------------------
+
+	.progress-bar-success {
+	  @include progress-bar-variant($progress-bar-success-bg);
+	}
+
+	.progress-bar-info {
+	  @include progress-bar-variant($progress-bar-info-bg);
+	}
+
+	.progress-bar-warning {
+	  @include progress-bar-variant($progress-bar-warning-bg);
+	}
+
+	.progress-bar-danger {
+	  @include progress-bar-variant($progress-bar-danger-bg);
+	}
+	
 /* Features */
 
 	.features {
@@ -1523,7 +1601,7 @@ $baseurl: '{{ site.baseurl }}/images';
 
 		p {
 			letter-spacing: _size(letter-spacing-alt);
-			text-transform: uppercase;
+			//text-transform: uppercase;
 
 			a {
 				color: inherit;

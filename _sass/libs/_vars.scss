@@ -47,7 +47,7 @@
 		border2-bg:			rgba(144,144,144,0.5),
 
 		accent1: (
-			bg:				#21b2a6,
+			bg:				#19b5fe,
 			fg-bold:		#ffffff,
 			fg:				mix(#21b2a6, #ffffff, 25%),
 			fg-light:		mix(#21b2a6, #ffffff, 40%),
@@ -123,3 +123,50 @@
 			border2-bg:		rgba(0,0,0,0.1)
 		)
 	);
+	
+//Progress bars
+	//
+	//##
+
+	//** Background color of the whole progress component
+	
+	$font-size-base:          14px !default;
+	$font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
+	$font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~12px
+	
+	//** Unit-less `line-height` for use in components like buttons.
+	$line-height-base:        1.428571429 !default; // 20/14
+	//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+	$line-height-computed:    floor(($font-size-base * $line-height-base)) !default; // ~20px
+	
+	$brand-primary:         darken(#428bca, 6.5%) !default; // #337ab7
+	$brand-success:         #5cb85c !default;
+	$brand-info:            #5bc0de !default;
+	$brand-warning:         #f0ad4e !default;
+	$brand-danger:          #d9534f !default;
+	
+	$border-radius-base:        4px !default;
+	$border-radius-large:       6px !default;
+	$border-radius-small:       3px !default;
+	
+	$progress-bg:                 #f5f5f5 !default;
+	//** Progress bar text color
+	$progress-bar-color:          #fff !default;
+	//** Variable for setting rounded corners on progress bar.
+	$progress-border-radius:      $border-radius-large !default;
+
+	//** Default progress bar color
+	$progress-bar-bg:             $brand-primary !default;
+	//** Success progress bar color
+	$progress-bar-success-bg:     $brand-success !default;
+	//** Warning progress bar color
+	$progress-bar-warning-bg:     $brand-warning !default;
+	//** Danger progress bar color
+	$progress-bar-danger-bg:      $brand-danger !default;
+	//** Info progress bar color
+	$progress-bar-info-bg:        $brand-info !default;
+	
+	$color_fuscous_gray_approx: #555;
+	$color_chateau_green_approx: rgb(43,194,83);
+	$color_sandy_brown_approx: #f1a165;
+	$color_wewak_approx: #f0a3a3;
