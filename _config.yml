@@ -9,6 +9,8 @@ first_published: 2016 # if migrating another site, the year of your first publis
 email: gauthamilango@gmail.com
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://igautham.com" # the base hostname & protocol for your site
+gems:
+  - jekyll-sitemap
 social:
   twitter: https://twitter.com/gauthamilango
   github: https://github.com/gauthamilango
