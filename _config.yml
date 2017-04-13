@@ -3,7 +3,11 @@
 
 # Site settings
 title: Gautham Ilango
-description: Wanna Make Cool iOS or Android Applications ?
+description: |
+  Independent & Contract iOS Application Developer  
+  3+ Years of experience in working with various kinds of iOS Apps  
+  Constantly motivated and inspired to help Startups turn their ideas into applications  
+  Man of Passion | Love to work | I like to be a Philanthropist
 owner: Gautham Ilango # or company name
 first_published: 2016 # if migrating another site, the year of your first publish
 email: gauthamilango@gmail.com
@@ -15,7 +19,7 @@ social:
   twitter: https://twitter.com/gauthamilango
   github: https://github.com/gauthamilango
   linkedin-square: https://linkedin.com/in/gauthamilango
-  facebook-official: https://facebook.com/gautham.ilango
+  #facebook-official: https://facebook.com/gautham.ilango
   #google-plus-square: /https://plus.google.com/u/0/+<username>
   #email: /contact/
   #flickr:
