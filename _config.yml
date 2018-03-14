@@ -5,7 +5,7 @@
 title: Gautham Ilango
 description: |
   Independent & Contract iOS Application Developer  
-  3+ Years of experience in working with various kinds of iOS Apps  
+  4+ Years of experience in working with various kinds of iOS Apps  
   Constantly motivated and inspired to help Startups turn their ideas into applications  
   Man of Passion | Love to work | I like to be a Philanthropist
 owner: Gautham Ilango # or company name
@@ -13,7 +13,7 @@ first_published: 2016 # if migrating another site, the year of your first publis
 email: gauthamilango@gmail.com
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://igautham.com" # the base hostname & protocol for your site
-gems:
+plugins:
   - jekyll-sitemap
 social:
   twitter: https://twitter.com/gauthamilango
